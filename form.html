@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir</title>
+</head>
+<body>
+
+<div style="border: 2px solid gray; padding: 10px;">
+
+    <h2>Formulir Pendaftaran</h2>
+
+    <form>
+        Nama Lengkap:<br>
+        <input type="text" name="nama" placeholder="Masukkan nama">
+        <br><br>
+
+        Email:<br>
+        <input type="email" name="email" placeholder="nama@email.com">
+        <br><br>
+
+        Password:<br>
+        <input type="password" name="password">
+        <br><br>
+
+        Umur:<br>
+        <input type="number" name="umur" style="width: 90px;">
+        <br><br>
+
+        Tanggal Lahir:<br>
+        <input type="date" name="tanggal_lahir">
+        <br><br>
+
+        Jenis Kelamin:<br>
+        <input type="radio" name="jenis_kelamin" value="Laki-laki">
+        Laki-laki<br>
+        <input type="radio" name="jenis_kelamin" value="Perempuan">
+        Perempuan
+        <br><br>
+
+        Hobi:<br>
+        <input type="checkbox" name="hobi" value="Coding">
+        Coding<br>
+        <input type="checkbox" name="hobi" value="Gaming">
+        Gaming<br>
+        <input type="checkbox" name="hobi" value="Olahraga">
+        Olahraga
+        <br><br>
+
+        Jurusan:<br>
+        <select name="jurusan">
+            <option value="">-- Pilih Jurusan --</option>
+        </select>
+        <br><br>
+
+        Alamat:<br>
+        <textarea name="alamat" rows="7" cols="50"
+        placeholder="Masukkan alamat"></textarea>
+        <br><br>
+
+        Foto:<br>
+        <input type="file" name="foto">
+        <br><br>
+
+        Website:<br>
+        <input type="url" name="website"
+        placeholder="https://example.com">
+        <br><br>
+
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Reset">
+
+    </form>
+
+</div>
+
+</body>
+</html>
