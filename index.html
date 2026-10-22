@@ -49,21 +49,27 @@
 
         ul {
             list-style: none;
-            padding: 0;
+            padding: 10px;
             margin: 0;
             width: 100%;
-            max-width: 460px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
             gap: 12px;
+        }
+
+        li {
+            flex: 0 1 auto;
         }
 
         li a {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
-            padding: 15px 20px;
+            gap: 10px;
+            padding: 15px 18px;
             background-color: white;
             border: 1px solid #f4c2d6;
             border-left: 5px solid #d63384;
@@ -72,7 +78,8 @@
             font-weight: bold;
             text-decoration: none;
             box-shadow: 0 3px 8px #d6338415;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.3s ease,
+                        background-color 0.3s ease;
         }
 
         li a::after {
@@ -83,11 +90,7 @@
 
         li a:hover {
             background-color: #ffcce0;
-        }
-
-        li a.active {
-            transform: translateX(30px);
-            background-color: #ffcce0;
+            transform: translateY(-4px);
         }
     </style>
 </head>
@@ -95,7 +98,7 @@
 <body>
 
     <p class="welcome">
-        <a href="about-me.html">HALO SEMUANYA!</a>
+        <a href="about.me.html">HALO SEMUANYA!</a>
     </p>
 
     <img src="IMG_248.jpg" alt="Foto saya">
@@ -104,7 +107,7 @@
 
     <ul>
         <li><a href="profile.html">MY PROFILE</a></li>
-        <li><a href="about-me.html">ABOUT ME</a></li>
+        <li><a href="about.me.html">ABOUT ME</a></li>
         <li><a href="hobbies.html">MY HOBBIES</a></li>
         <li><a href="educations.html">EDUCATION</a></li>
         <li><a href="course-schedule.html">CLASS SCHEDULE</a></li>
@@ -113,22 +116,6 @@
         <li><a href="table%202.html">TABLE 2</a></li>
         <li><a href="table%203.html">TABLE 3</a></li>
     </ul>
-
-    <script>
-        document.querySelectorAll("li a").forEach(function(link) {
-            link.addEventListener("click", function(event) {
-                if (!link.classList.contains("active")) {
-                    event.preventDefault();
-
-                    document.querySelectorAll("li a").forEach(function(item) {
-                        item.classList.remove("active");
-                    });
-
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>
