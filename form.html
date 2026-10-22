@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulir</title>
+
+    <style>
+        body {
+            background-color: #fff0f5;
+            font-family: Arial, sans-serif;
+            color: #66334d;
+            margin: 30px;
+        }
+
+        div {
+            border: 2px solid #f28bb5;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+        }
+
+        h2 {
+            color: #d63384;
+            background-color: #ffcce0;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        input, select, textarea {
+            padding: 8px;
+            border: 1px solid #f28bb5;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        input[type="url"],
+        select,
+        textarea {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"],
+        input[type="file"] {
+            accent-color: #e75480;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #e75480;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #d63384;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+
+    <h2>Formulir Pendaftaran</h2>
+
+    <form>
+        Nama Lengkap:<br>
+        <input type="text" name="nama" placeholder="Masukkan nama">
+        <br><br>
+
+        Email:<br>
+        <input type="email" name="email" placeholder="nama@email.com">
+        <br><br>
+
+        Password:<br>
+        <input type="password" name="password">
+        <br><br>
+
+        Umur:<br>
+        <input type="number" name="umur" style="width: 90px;">
+        <br><br>
+
+        Tanggal Lahir:<br>
+        <input type="date" name="tanggal_lahir">
+        <br><br>
+
+        Jenis Kelamin:<br>
+        <input type="radio" name="jenis_kelamin" value="Laki-laki">
+        Laki-laki<br>
+        <input type="radio" name="jenis_kelamin" value="Perempuan">
+        Perempuan
+        <br><br>
+
+        Hobi:<br>
+        <input type="checkbox" name="hobi" value="Coding">
+        Coding<br>
+        <input type="checkbox" name="hobi" value="Gaming">
+        Gaming<br>
+        <input type="checkbox" name="hobi" value="Olahraga">
+        Olahraga
+        <br><br>
+
+        Jurusan:<br>
+        <select name="jurusan">
+            <option value="">-- Pilih Jurusan --</option>
+            <option value="Sistem Informasi">Sistem Informasi</option>
+            <option value="Informatika">Informatika</option>
+            <option value="Manajemen">Manajemen</option>
+        </select>
+        <br><br>
+
+        Alamat:<br>
+        <textarea name="alamat" rows="7"
+        placeholder="Masukkan alamat"></textarea>
+        <br><br>
+
+        Foto:<br>
+        <input type="file" name="foto">
+        <br><br>
+
+        Website:<br>
+        <input type="url" name="website"
+        placeholder="https://example.com">
+        <br><br>
+
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Reset">
+
+    </form>
+
+</div>
+
+</body>
+</html>

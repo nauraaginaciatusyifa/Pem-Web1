@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Final Tugas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to bottom, #fff4f8, #fde6ef);
+            color: #66334d;
+            font-family: Arial, sans-serif;
+        }
+
+        .welcome {
+            font-weight: bold;
+        }
+
+        .welcome a {
+            color: #d63384;
+            text-decoration: none;
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px #d63384;
+        }
+
+        h1 {
+            margin: 25px 0;
+            text-align: center;
+            color: #d63384;
+            font-size: clamp(24px, 5vw, 36px);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-width: 460px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        li a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 15px 20px;
+            background-color: white;
+            border: 1px solid #f4c2d6;
+            border-left: 5px solid #d63384;
+            border-radius: 10px;
+            color: #66334d;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 3px 8px #d6338415;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        li a::after {
+            content: "›";
+            color: #d63384;
+            font-size: 25px;
+        }
+
+        li a:hover {
+            background-color: #ffcce0;
+        }
+
+        li a.active {
+            transform: translateX(30px);
+            background-color: #ffcce0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="welcome">
+        <a href="about-me.html">HALO SEMUANYA!</a>
+    </p>
+
+    <img src="IMG_248.jpg" alt="Foto saya">
+
+    <h1>Selamat Datang di Web Saya</h1>
+
+    <ul>
+        <li><a href="profile.html">MY PROFILE</a></li>
+        <li><a href="about-me.html">ABOUT ME</a></li>
+        <li><a href="hobbies.html">MY HOBBIES</a></li>
+        <li><a href="educations.html">EDUCATION</a></li>
+        <li><a href="course-schedule.html">CLASS SCHEDULE</a></li>
+        <li><a href="form.html">FORM</a></li>
+        <li><a href="table%201.html">TABLE 1</a></li>
+        <li><a href="table%202.html">TABLE 2</a></li>
+        <li><a href="table%203.html">TABLE 3</a></li>
+    </ul>
+
+    <script>
+        document.querySelectorAll("li a").forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                if (!link.classList.contains("active")) {
+                    event.preventDefault();
+
+                    document.querySelectorAll("li a").forEach(function(item) {
+                        item.classList.remove("active");
+                    });
+
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
