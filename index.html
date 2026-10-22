@@ -47,29 +47,58 @@
             font-size: clamp(24px, 5vw, 36px);
         }
 
-        ul {
-            list-style: none;
-            padding: 10px;
-            margin: 0;
+        .menu {
             width: 100%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
+            max-width: 460px;
         }
 
-        li {
-            flex: 0 1 auto;
-        }
-
-        li a {
+        .menu-button {
+            width: 100%;
+            padding: 16px 20px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            background-color: #d63384;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 3px 8px #d6338425;
+        }
+
+        .menu-button:hover {
+            background-color: #bd2872;
+        }
+
+        .arrow {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .menu-button.open .arrow {
+            transform: rotate(180deg);
+        }
+
+        .menu-list {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
             gap: 10px;
-            padding: 15px 18px;
+        }
+
+        .menu-list.show {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
             background-color: white;
             border: 1px solid #f4c2d6;
             border-left: 5px solid #d63384;
@@ -77,20 +106,18 @@
             color: #66334d;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 3px 8px #d6338415;
-            transition: transform 0.3s ease,
-                        background-color 0.3s ease;
+            transition: 0.3s;
         }
 
-        li a::after {
+        .menu-list a::after {
             content: "›";
             color: #d63384;
-            font-size: 25px;
+            font-size: 24px;
         }
 
-        li a:hover {
+        .menu-list a:hover {
             background-color: #ffcce0;
-            transform: translateY(-4px);
+            transform: translateX(5px);
         }
     </style>
 </head>
@@ -105,17 +132,44 @@
 
     <h1>Selamat Datang di Web Saya</h1>
 
-    <ul>
-        <li><a href="profile.html">MY PROFILE</a></li>
-        <li><a href="about.me.html">ABOUT ME</a></li>
-        <li><a href="hobbies.html">MY HOBBIES</a></li>
-        <li><a href="educations.html">EDUCATION</a></li>
-        <li><a href="course-schedule.html">CLASS SCHEDULE</a></li>
-        <li><a href="form.html">FORM</a></li>
-        <li><a href="table%201.html">TABLE 1</a></li>
-        <li><a href="table%202.html">TABLE 2</a></li>
-        <li><a href="table%203.html">TABLE 3</a></li>
-    </ul>
+    <div class="menu">
+
+        <button class="menu-button" id="menuButton"
+                onclick="toggleMenu()"
+                aria-expanded="false"
+                aria-controls="menuList">
+            <span>MENU TUGAS</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <ul class="menu-list" id="menuList">
+            <li><a href="profile.html">MY PROFILE</a></li>
+            <li><a href="about.me.html">ABOUT ME</a></li>
+            <li><a href="hobbies.html">MY HOBBIES</a></li>
+            <li><a href="educations.html">EDUCATION</a></li>
+            <li><a href="course-schedule.html">CLASS SCHEDULE</a></li>
+            <li><a href="form.html">FORM</a></li>
+            <li><a href="table%201.html">TABLE 1</a></li>
+            <li><a href="table%202.html">TABLE 2</a></li>
+            <li><a href="table%203.html">TABLE 3</a></li>
+        </ul>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menuList");
+            const button = document.getElementById("menuButton");
+
+            menu.classList.toggle("show");
+            button.classList.toggle("open");
+
+            button.setAttribute(
+                "aria-expanded",
+                menu.classList.contains("show")
+            );
+        }
+    </script>
 
 </body>
 </html>
